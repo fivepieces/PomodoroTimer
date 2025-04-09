@@ -7,27 +7,34 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+
+    <!--This is the whole screen, in a class called container, it has flexboxes that flex :D -->
     <div class="container">
       <!-- Window Control Buttons & Draggable Top Bar -->
       <div class="top-bar draggable">
         <div class="title">Pomodoro Timer <3</div>
         <div class="window-controls">
-          <button id="minimizeBtn" class="no-drag">__</button>
-          <button id="closeBtn" class="no-drag">X</button>
+            <button id="minimizeBtn" class="no-drag">
+                <img src="../assets/Minimize.png" alt="Minimize">
+            </button>
+            <button id="closeBtn" class="no-drag">
+                <img src="../assets/close.png" alt="close">    
+            </button>
         </div>
       </div>
 
-      <!-- Timer Image -->
-      <img src="assets/idle.png" alt="Pomodoro" class="timer-img" />
 
-      <!-- Timer Display -->
-      <h1 id="timer">25:00</h1>
+    <!-- Top Content (Chicken & Timer)-->
+    <div class="top-content">
+        <!-- Idle Chicken Image -->
+        <img src="../assets/ChickenIdle.png" alt="Pomodoro" class="idle-chicken" id="chickenImg" />
+        <!-- Timer Display -->
+        <h1 id="timer" style="display: none;">25:00</h1>
+    </div>
 
       <!-- Timer Control Buttons -->
       <div class="buttons">
         <button onclick="startTimer()" id="startBtn">Start</button>
-        <button id="pauseBtn">Pause</button>
-        <button id="resetBtn">Reset</button>
       </div>
     </div>
 
