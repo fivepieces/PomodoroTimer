@@ -1,0 +1,112 @@
+/* Ensure the body and container fill the window */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Needed for absolute positioning of the window controls */
+  }
+  
+  /* Window control buttons */
+  .window-controls {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: flex-ends;
+    z-index: 100;
+  }
+  
+  .window-controls button {
+    width: 40px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .window-controls button:hover {
+    opacity: 0.7;
+  }
+  
+  /* Timer Image */
+  .timer-img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Timer Display */
+  #timer {
+    font-size: 48px;
+    margin: 10px 0;
+  }
+  
+  /* Timer Control Buttons */
+  .buttons button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6347;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttons button:hover {
+    background-color: #ff3b22;
+  }
+  
+  .top-bar {
+    height: 32px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    -webkit-app-region: drag;
+    z-index: 1000;
+  }
+  
+  .title {
+    font-size: 14px;
+    color: #333;
+    user-select: none;
+  }
+  
+  .window-controls {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .window-controls button {
+    width: 32px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+  }
+  
