@@ -29,12 +29,17 @@
         <!-- Idle Chicken Image -->
         <img src="../assets/ChickenIdle.png" alt="Pomodoro" class="idle-chicken" id="chickenImg" />
         <!-- Timer Display -->
-        <h1 id="timer" style="display: none;">25:00</h1>
+        <h1 id="timer" style="display: none;"></h1>
     </div>
 
       <!-- Timer Control Buttons -->
       <div class="buttons">
-        <button onclick="startTimer()" id="startBtn">Start</button>
+        <button onclick="startTimer()" id="startBtn">
+            <img src="../assets/Startbutton.png">
+        </button>
+        <button onclick="startBreak()" id="breakBtn" style="display: none;">
+            <img src="../assets/BreakButton.png">
+        </button>
       </div>
     </div>
 

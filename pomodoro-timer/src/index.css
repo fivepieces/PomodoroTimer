@@ -1,121 +1,136 @@
-/* Ensure the body and container fill the window */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* pushes top and bottom content apart */
-    height: 100vh; /* Controls how tall the inner content area is */
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative; /* Needed for absolute positioning of the window controls */
-    box-sizing: border-box;
-    text-align: center;
+    /* Ensure the body and container fill the window */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url('../assets/Sprite-0004.png');
+        background-size: cover;
+        background-position: center;
+    }
 
-  }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* pushes top and bottom content apart */
+        align-items: center;
+        height: 100vh; /* Controls how tall the inner content area is */
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative; /* Needed for absolute positioning of the window controls */
+        box-sizing: border-box;
+        text-align: center;
+    }
 
-  .top-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  /* Window control buttons */
-  .window-controls {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    display: flex;
-    justify-content: flex-ends;
-    z-index: 100;
-  }
-  
-  .window-controls button {
-    width: 40px;
-    height: 32px;
-    background: transparent;
-    border: none;
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .window-controls button:hover {
-    opacity: 0.7;
-  }
-  
-  /* Idle Chicken Image */
-  .idle-chicken {
-    width: 30vw;
-    max-width: 200px;
-    height:auto;
-  }
-  
-  /* Timer Display */
-  #timer {
-    font-size: 48px;
-    margin: 10px 0;
-  }
-  
-  /* Timer Control Buttons */
-  .buttons {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .buttons button:hover {
-    background-color: #ff3b22;
-  }
-  
-  .top-bar {
-    height: 32px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    -webkit-app-region: drag;
-    z-index: 1000;
-  }
-  
-  .title {
-    font-size: 14px;
-    color: #333;
-    user-select: none;
-  }
-  
-  .window-controls {
-    display: flex;
-    gap: 4px;
-  }
-  
-  .window-controls button {
-    width: 32px;
-    height: 28px;
-    background: transparent;
-    border: none;
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-app-region: no-drag;
-  }
-  
+    .top-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    /* Idle Chicken Image */
+    .idle-chicken {
+        width: 150px;
+        height:auto;
+    }
+
+    /* Sleeping Chicken Image */
+    .sleeping-chicken {
+        width: 150px;
+        height:auto;
+    }
+
+    /* Timer Display */
+    #timer {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 10px 0;
+        position: absolute;
+        bottom: 0px;
+        left: 30%;
+    }
+
+    /* Timer Control Buttons */
+    .buttons button {
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        width:100px;
+        height:auto;
+        align-items: center;
+        position: absolute;
+        top: 15%;
+        right: 70%;
+    }
+    
+    .buttons button img {
+        width: 60%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    .top-bar {
+        height: 32px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 0px;
+        background-color: #bfcfbb;
+        border: 2px solid #8ea58c;
+        -webkit-app-region: drag;
+        z-index: 1000;
+
+        /* Ensures no overflow beyond the viewport */
+        box-sizing: border-box;  /* Prevents width from causing overflow */
+        max-width: 100%;  /* Ensures the bar does not extend beyond the body */
+    }
+
+    .title {
+        font-size: 14px;
+        color: #333;
+        user-select: none;
+        margin-left: 10px;
+    }
+
+    /* Window control buttons container */
+    .window-controls {
+        display: flex;
+        gap: 4px;  /* Space between buttons */
+        margin-right: 4px;
+        align-items: center;
+    }
+
+    /* Individual window control buttons */
+    .window-controls button {
+        width: 32px;
+        height: 28px;
+        background: transparent;
+        border: none;
+        color: #333;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-app-region: no-drag;
+    }
+
+    .window-controls button img {
+        width: 120%;
+        height: auto;
+    }
+
+    .window-controls button:hover {
+        opacity: 0.7;
+    }

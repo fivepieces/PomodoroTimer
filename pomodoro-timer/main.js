@@ -4,8 +4,9 @@ const path = require("node:path");
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 400,
-    height: 400,
+    width: 300,
+    height: 300,
+    transparent:true,
     resizable: false, // Prevent resizing
     frame: false, // Hide the window frame (title bar)
     webPreferences: {
